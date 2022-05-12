@@ -1,0 +1,36 @@
+[
+    {
+        "Was": "Ohrring",
+        "Welche": null,
+        "Anzahl": "3",
+        "Gravur": "Hallo"
+    },
+    {
+        "Was": "Armband",
+        "Welche": null,
+        "Anzahl": "5",
+        "Gravur": "hallo"
+    },
+    {
+        "Was": "Kette",
+        "Welche": null,
+        "Anzahl": "1",
+        "Gravur": "hi",
+        "Zeitstempel": "2022-05-12 15:45:58.033617"
+    },
+    {
+        "Was": "Kette",
+        "Welche": null,
+        "Anzahl": "1",
+        "Gravur": "Anna-Lena",
+        "Zeitstempel": "2022-05-12 16:07:51.945604"
+    },
+    {
+        "Name": "Hallo",
+        "Was": "Kette",
+        "Welches": "Silber",
+        "Anzahl": "1",
+        "Gravur": "hallo",
+        "Zeitstempel": "2022-05-12 16:10:45.111916"
+    }
+]

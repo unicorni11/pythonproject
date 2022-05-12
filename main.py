@@ -26,7 +26,7 @@ def formular():
         data = request.form
         name = data["name"]
         was = data.get("was")
-        welche = data.get("welche")
+        welches = data.get("welches")
         anzahl = data.get("anzahl")
         gravur = data["gravur"]
         zeitstempel = datetime.now()
@@ -37,7 +37,7 @@ def formular():
         except FileNotFoundError:
             datei_inhalt = []
 
-        my_dict = {"Was": was, "Welche": welche, "Anzahl": anzahl, "Gravur": gravur, "Zeitstempel": zeitstempel}
+        my_dict = {"Name": name, "Was": was, "Welches": welches, "Anzahl": anzahl, "Gravur": gravur, "Zeitstempel": zeitstempel}
         datei_inhalt.append(my_dict)
 
         with open("bestellung.json", "w") as open_file:
