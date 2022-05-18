@@ -1,8 +1,11 @@
 {% include "header.html" %}
 
-<form method="POST">
+<form method="POST" class=" m-3 w-25">
 
-  <p>Bitte gebe deinen Namen ein: </p><input type="text" name="name" placeholder="Name">
+     <p>Bitte gebe deinen Namen ein: </p><input class="col-md-12 mt-1" type="text" name="name" placeholder="Name"></p>
+
+     <p>Bitte gebe deine Adresse ein: </p><input class="col-md-12 mt-1" type="text" name="adresse" placeholder="Adresse"></p>
+
 
   <p>
   <div class="form-group">
@@ -19,11 +22,9 @@
       <div class="form-group">
     <label for="welches">Welches Material soll das ausgewählte Produkt haben?</label>
     <select class="form-control"  name= "welches" id="welches">
-      <option>Silber</option>
       <option>Weissgold</option>
       <option>Gelbgold</option>
       <option>Rosegold</option>
-      <option>Platin</option>
     </select>
   </div>
   </p>
@@ -47,9 +48,12 @@
   <div class="form-group">
   </p>
 
-<p>Möchten Sie eine Gravur? </p><input type="text" name="gravur" placeholder="Gravur"><br><br>
+<p>Möchten Sie eine Gravur? </p><input class="col-md-12 mt-1" type="text" name="gravur" placeholder="Gravur"><br><br>
 
 <button type="submit">Daten übermitteln</button>
+    {% if daten_uebermittelt == True %}
+    <p class="text-success">Deine Daten wurden erfolgreich übermittelt!</p>
+    {% endif %}
 </form>
 </body>
 </html>
