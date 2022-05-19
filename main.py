@@ -62,16 +62,40 @@ def bestellungen():
         else:
             gravurwert = element["Gravur"]
 
-        bestell_uebersicht.append([element["Name"], element["Was"], element["Welches"], element["Anzahl"], gravurwert])
+        bestell_uebersicht.append([element["Name"], element["Adresse"], element["Was"], element["Welches"], element["Anzahl"], gravurwert])
 
 
     return render_template("bestellungen.html", bestell_uebersicht=bestell_uebersicht)
 
 
-@app.route("/backend")
+@app.route("/backend", methods=["GET", "POST"])
 def backend():
+    bestell_uebersicht = []
 
-    return render_template("backend.html")
+    try:
+        with open("bestellung.json", "r") as open_file:  # r für read = lesen
+            datei_inhalt = json.load(open_file)
+    except FileNotFoundError:
+        datei_inhalt = []
+
+    for element in datei_inhalt:
+        if element["Gravur"] == "":
+            gravurwert = "keine Gravur"
+        else:
+            gravurwert = element["Gravur"]
+
+        bestell_uebersicht.append(
+            [element["Name"], element["Adresse"], element["Was"], element["Welches"], element["Anzahl"], gravurwert, element["Zeitstempel"]])
+
+    if request.form.get("zeitstempel") == element["Zeitstempel"]:
+        print("test1234")
+        for element in datei_inhalt:
+            if request.form.get("zeitstempel") == element["Zeitstempel"]:
+                print(element["Name"])
+
+
+    return render_template("backend.html", bestell_uebersicht=bestell_uebersicht)
+
 
 @app.route("/visualisierung")
 def visualisierung():
