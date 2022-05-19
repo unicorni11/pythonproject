@@ -1,29 +1,29 @@
 {% include "header.html" %}
 <body>
 <div>
-                    <table class="table table-striped m-4">
-                        <thead style="background-color:rgb(255, 211, 155)">
-                            <th style="width: 10%" scope="col">Name</th>
-                            <th style="width: 10%" scope="col">Adresse</th>
-                            <th style="width: 10%" scope="col">Produkt</th>
-                            <th style="width: 10%" scope="col">Material</th>
-                            <th style="width: 10%" scope="col">Anzahl</th>
-                            <th style="width: 10%" scope="col">Gravur</th>
-                        </thead>
-                        <tbody>
-                        {% for element in bestell_uebersicht %}
-                            <tr>
-                                <td>{{element[0]}}</td>
-                                <td>{{element[1]}}</td>
-                                <td>{{element[2]}}</td>
-                                <td>{{element[3]}}</td>
-                                <td>{{element[4]}}</td>
-                                <td>{{element[5]}}</td>
+    <table class="table table-striped m-4">
+        <thead style="background-color:rgb(255, 211, 155)">
+        <th style="width: 10%" scope="col">Name</th>
+        <th style="width: 10%" scope="col">Adresse</th>
+        <th style="width: 10%" scope="col">Produkt</th>
+        <th style="width: 10%" scope="col">Material</th>
+        <th style="width: 10%" scope="col">Anzahl</th>
+        <th style="width: 10%" scope="col">Gravur</th>
+        </thead>
+        <tbody>
+        {% for element in bestell_uebersicht %}
+        <tr>
+            <td>{{element[0]}}</td>
+            <td>{{element[1]}}</td>
+            <td>{{element[2]}}</td>
+            <td>{{element[3]}}</td>
+            <td>{{element[4]}}</td>
+            <td>{{element[5]}}</td>
 
-                            </tr>
-                        {% endfor %}
-                        </tbody>
-                    </table>
-                </div>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
 </body>
 </html>
