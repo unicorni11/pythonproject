@@ -1,5 +1,7 @@
 {% include "header.html" %}
 <body>
+<div><p>Der Gesamtumsatz ist: {{ umsatz_gesamt }}</p></div>
+<div><p>Der Umsatz der Ketten ist: {{ umsatz_ketten }}</p></div>
 <div>
     <form method="POST">
         <table class="table table-striped m-4">
@@ -10,6 +12,7 @@
             <th style="width: 10%" scope="col">Material</th>
             <th style="width: 10%" scope="col">Anzahl</th>
             <th style="width: 10%" scope="col">Gravur</th>
+            <th style="width: 10%" scope="col">Auswahl</th>
             <th style="width: 10%" scope="col">Status</th>
             </thead>
             <tbody>
@@ -22,17 +25,25 @@
                 <td>{{element[3]}}</td>
                 <td>{{element[4]}}</td>
                 <td>{{element[5]}}</td>
+                <td>{{element[7]}}</td>
                 <td>
-                    <form method="post">
-                        <input type="hidden" name="zeitstempel" value="{{element[6]}}">
-                        <select class="form-control" name="zeitstempel" value="{{element[6]}}">
-                            <option>nicht im Lager</option>
-                            <option>im Lager</option>
-                            <option>Versendet</option>
-                        </select>
+                    <form method="POST" action="{{ url_for('backend') }}">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="{{ element[6] }}" id="flexRadioDefault4" value="nicht im Lager">
+                            <label class="form-check-label" for="flexRadioDefault4">nicht im Lager</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="{{ element[6] }}" id="flexRadioDefault5" value="im Lager">
+                            <label class="form-check-label" for="flexRadioDefault5">Im Lager</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="{{ element[6] }}" id="flexRadioDefault6" value="Versendet">
+                            <label class="form-check-label" for="flexRadioDefault6">Versendet</label>
+                        </div>
                         <button type="submit">Senden</button>
                     </form>
                 </td>
+
 
             </tr>
 
