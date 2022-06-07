@@ -1,22 +1,8 @@
 {% include "header.html" %}
 
-{% block content %}
-<div class="container">
-    </br>
-    <h1>Auswertung: Seite in Bearbeitung</h1>
-    <p>Hier kannst du all deine erfassten Sportdaten ausgewertet einsehen.</p>
-    </br>
-    <div class="row">
-        <div class="col">
-            {{ viz_div1|safe }} <!-- Pie-Chart Diagramm -->
-        </div>
-    </div>
-    <div class="row">
-        <div class="col">
-            {{ viz_div2|safe }} <!-- Scatter Plot Diagramm -->
-        </div>
-    </div>
-</div>
-{% endblock %}
-
-{% include "footer.html" %}
+<body>
+<h5>Übersicht Höhenmeter:</h5>
+        {{ balkendiagramm|safe }}
+        <br>
+</body>
+</html>

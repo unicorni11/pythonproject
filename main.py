@@ -3,6 +3,8 @@ from flask import render_template
 from flask import request, redirect
 import json
 from datetime import datetime
+import plotly.express as px
+from plotly.offline import plot
 
 
 app = Flask("__name__")
@@ -82,6 +84,9 @@ def backend():
     bestell_uebersicht = []
     umsatz_gesamt = 0
     umsatz_ketten = 0
+    umsatz_armband = 0
+    umsatz_ring = 0
+    umsatz_ohrring = 0
 
     try:
         with open("bestellung.json", "r") as open_file:  # r für read = lesen
@@ -94,6 +99,12 @@ def backend():
         umsatz_gesamt = umsatz_gesamt + element["Preis"]
         if element["Was"] == "Kette":
             umsatz_ketten = umsatz_ketten + element["Preis"]
+        elif element["Was"] == "Armband":
+            umsatz_armband = umsatz_armband + element["Preis"]
+        elif element["Was"] == "Ring":
+            umsatz_ring = umsatz_ring + element["Preis"]
+        else:
+            umsatz_ohrring = umsatz_ohrring + element["Preis"]
 
 
     for element in datei_inhalt:
@@ -119,19 +130,24 @@ def backend():
 
         return redirect("backend")
 
-    return render_template("backend.html", bestell_uebersicht=bestell_uebersicht, umsatz_gesamt=umsatz_gesamt, umsatz_ketten = umsatz_ketten)
-
-
-@app.route("/auswertung")
-def auswertung():
-    div1 = piechart.viz() #Kreisdiagramm (siehe piechart.py)
-    div2 = scatterplot.viz() #Scatter Plot (siehe scatterplot.py)
-    return render_template("auswertung.html", viz_div1=div1, viz_div2=div2)
+    return render_template("backend.html", bestell_uebersicht=bestell_uebersicht, umsatz_gesamt=umsatz_gesamt, umsatz_ketten = umsatz_ketten, umsatz_armband = umsatz_armband,
+                           umsatz_ring = umsatz_ring, umsatz_ohrring = umsatz_ohrring)
 
 @app.route("/visualisierung")
 def visualisierung():
+    balkendiagramm = px.bar(
+        x=["Kette", "Armband", "Ringe", "Ohrringe"],
+        y=[umsatz_ketten, umsatz_armband, umsatz_ring, umsatz_ohrring],
+        labels={"x": "Produkt", "y": "Umsatz"}
+    )
+    div_balkendiagramm = plot(balkendiagramm, output_type="div")
 
-    return render_template("visualisierung.html")
+    return render_template("visualisierung.html", balkendiagramm = div_balkendiagramm, umsatz_ketten = umsatz_ketten, umsatz_armband = umsatz_armband,
+                           umsatz_ring = umsatz_ring, umsatz_ohrring = umsatz_ohrring)
+
+
+
+
 
 if __name__ == "__main__":
     app.run(debug=True, port=5000)
