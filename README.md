@@ -1,11 +1,14 @@
 **Fett** _kursiv_
 
-1. Ausgangslage des Projektes
+#Projektidee
 
-2. Funktion/Projektidee
 
-3. Ablaufdiagramm
+##1. Ausgangslage des Projektes
 
-4. Anleitung/Walkthrough
+##2. Funktion/Projektidee
 
-5. FAQ's
+##3. Ablaufdiagramm
+
+##4. Anleitung/Walkthrough
+
+##5. FAQ's

@@ -1,46 +1,35 @@
 [
     {
-        "Name": "Nicolas",
-        "Adresse": "a\u00f6sdf",
-        "Was": "Kette",
+        "Name": "Marie-Amelie Frick",
+        "Adresse": "Im alten Riet 102",
+        "Was": "Armband",
         "Welches": "Weissgold",
         "Anzahl": "1",
         "Gravur": "",
-        "Zeitstempel": "2022-06-02 17:30:44.680573",
+        "Zeitstempel": "2022-06-09 18:05:59.426201",
         "Bestellstatus": "Versendet",
-        "Preis": 3000
+        "Preis": 1500
     },
     {
-        "Name": "Nici",
-        "Adresse": "sk\u00f6dlfj",
-        "Was": "Ohrring",
+        "Name": "Anna-Lena Loibner",
+        "Adresse": "Riedstrasse 2",
+        "Was": "Ring",
         "Welches": "Gelbgold",
-        "Anzahl": "3",
-        "Gravur": "",
-        "Zeitstempel": "2022-06-02 17:34:03.021884",
-        "Bestellstatus": "nicht im Lager",
-        "Preis": 2500
-    },
-    {
-        "Name": "lj\u00f6",
-        "Adresse": "jkl\u00f6j",
-        "Was": "Ohrring",
-        "Welches": "Weissgold",
-        "Anzahl": "4",
-        "Gravur": "",
-        "Zeitstempel": "2022-06-02 17:35:07.759215",
-        "Bestellstatus": "nicht im Lager",
-        "Preis": 10000
-    },
-    {
-        "Name": "",
-        "Adresse": "",
-        "Was": "Kette",
-        "Welches": "Weissgold",
         "Anzahl": "1",
-        "Gravur": "",
-        "Zeitstempel": "2022-06-05 12:55:42.608197",
+        "Gravur": "Pro2 Bestanden",
+        "Zeitstempel": "2022-06-09 18:06:20.235642",
+        "Bestellstatus": "nicht im Lager",
+        "Preis": 1000
+    },
+    {
+        "Name": "Nicolas ",
+        "Adresse": "Herrengasse 11",
+        "Was": "Armband",
+        "Welches": "Gelbgold",
+        "Anzahl": "1",
+        "Gravur": "F\u00fcr meine Liebe",
+        "Zeitstempel": "2022-06-09 18:07:04.916602",
         "Bestellstatus": "",
-        "Preis": 3000
+        "Preis": 1500
     }
 ]
