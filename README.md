@@ -1,7 +1,6 @@
 **Fett** _kursiv_
 
-#Projektidee
-
+**#Projektidee**
 
 ## 1. Ausgangslage des Projektes
 
