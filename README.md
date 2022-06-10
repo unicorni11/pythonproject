@@ -27,11 +27,11 @@
 ### 3. Ablaufdiagramm Produktbestellung:
 
 Produktbestellung:
-![](../../../../../../Desktop/Produktbestellung.png)
+![Diagramm](./static//produktbestellung.png)
 
+Backend Funktion: 
+![Diagramm](./static//backend.png)
 
-Backend Funktion:
-![](../../../../../../Desktop/Backend.png) 
 ### 4. Anleitung/Walkthrough
 
 ### Installation & Benutzung
