@@ -25,13 +25,17 @@
    Bestellübersicht unter Status aufgezeigt.
 
 ### 3. Ablaufdiagramm Produktbestellung:
+
 Produktbestellung:
+![](../../../../../../Desktop/Produktbestellung.png)
+
 
 Backend Funktion:
-
+![](../../../../../../Desktop/Backend.png) 
 ### 4. Anleitung/Walkthrough
 
-Installation & Benutzung
+### Installation & Benutzung
+
 • Downloaden Sie das Verzeichnis "Projekt". (https://github.com/unicorni11/pythonproject.git)
 
 • Starten Sie die Python-Datei "main.py" auf ihrem Rechner.
