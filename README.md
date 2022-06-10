@@ -31,9 +31,12 @@ Produktbestellung:
 ![Diagramm](./static//produktbestellung.png)
 
 
+
+
 Backend Funktion: 
 
 ![Diagramm](./static//backend.png)
+
 
 ### 4. Anleitung/Walkthrough
 
@@ -43,7 +46,7 @@ Backend Funktion:
 
 * Starten Sie die Python-Datei "main.py" auf ihrem Rechner.
 
-*Öffnen Sie diesen Link via Webbrowser: "http://127.0.0.1:5000"
+* Öffnen Sie diesen Link via Webbrowser: "http://127.0.0.1:5000"
 
 * Im Verzeichnis wurden aktuell Beispieldaten abgelegt. Wenn Sie möchten, können Sie die Daten im „bestellungen.json“
 löschen. So bekommen Sie eine leere Webapplikation und Sie beginnen bei null. Ansonsten können Sie wie folgt eine Bestellung tätigen.
