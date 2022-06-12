@@ -1,3 +1,4 @@
+#Daten werden hier abgespeichert
 [
     {
         "Name": "Marie-Amelie Frick",
@@ -7,7 +8,7 @@
         "Anzahl": "1",
         "Gravur": "",
         "Zeitstempel": "2022-06-09 18:05:59.426201",
-        "Bestellstatus": "Versendet",
+        "Bestellstatus": "nicht im Lager",
         "Preis": 1500
     },
     {
@@ -18,7 +19,7 @@
         "Anzahl": "1",
         "Gravur": "Pro2 Bestanden",
         "Zeitstempel": "2022-06-09 18:06:20.235642",
-        "Bestellstatus": "nicht im Lager",
+        "Bestellstatus": "Versendet",
         "Preis": 1000
     },
     {
@@ -29,7 +30,7 @@
         "Anzahl": "1",
         "Gravur": "F\u00fcr meine Liebe",
         "Zeitstempel": "2022-06-09 18:07:04.916602",
-        "Bestellstatus": "",
+        "Bestellstatus": "im Lager",
         "Preis": 1500
     }
 ]

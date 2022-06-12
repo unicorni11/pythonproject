@@ -5,9 +5,8 @@
    Unser Familienunternehmen Herzog & Loibner ist ein Juwelier-Geschäft und befindet sich im
    Herzen von Vaduz. Vor fünf Jahren haben wir unsere eigene Schmuckmarke „Aldusblatt“ ins Leben gerufen. Es handelt
    sich hierbei um hochwertigen 18-Karat Schmuck. Um die Aldusblatt-Kollektion weiter zu vermarkten, möchte unser
-   Familienunternehmen unseren Kunden einen Online-Shop zur Verfügung stellen. So können wir das Unternehmen einen
-   Onlineshop zur Verfügung stellen. Im Shop sollten die Produkte ausgewählt und mittels Versand an die jeweilige
-   Adresse geliefert.
+   Familienunternehmen unseren Kunden einen Online-Shop zur Verfügung stellen. Im Shop können die Produkte ausgewählt und mittels Versand an die jeweilige
+   Adresse geliefert werden.
 
 ### 2. Projektidee 
 
@@ -15,12 +14,11 @@
    Informationen aufgezeigt werden. Nun hat man die Möglichkeit ein Produkt auszuwählen und gelangt somit auf das
    Bestell-Formular. Für eine neue Bestellung werden alle Felder, vom Name bis Anzahl, vollständig ausgefüllt.
    Zusätzlich bietet der Shop auch eine kostenlose Gravur an. Falls keine Gravur gewünscht wird, lässt der Kunde das
-   Feld leer und dies wird so auch in der Bestellübersicht unter Gravur so dargestellt. Sind alle Daten erfasst, können
-   diese in das Bestellformular übermittelt werden.
+   Feld leer. Sind alle Daten erfasst, können diese in der Bestellübersicht veranschaulicht werden.
 
    Der Shop Moderator hat nun die Möglichkeit, intern die Bestellliste im Backend einzusehen. Das Backend zeigt auf,
    welcher Umsatz mit welchem Produkt generiert wurde. Da das bestellte Produkt an die angegebene Adresse versendet wird,
-   muss zuerst geklärt werden, ob sich dieses Produkt an Lager befindet. Somit kann der Shop Moderator in der Bestellliste
+   muss zuerst geklärt werden, ob sich dieses Produkt an Lager befindet. Somit kann der Shop Moderator in der Bestellübersicht
    folgende Funktionen auswählen: nicht an Lager, an Lager und versendet. Diese Daten werden gespeichert und in der
    Bestellübersicht unter Status aufgezeigt.
 
