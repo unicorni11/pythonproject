@@ -46,9 +46,7 @@ Backend Funktion:
 
 * Öffnen Sie diesen Link via Webbrowser: "http://127.0.0.1:5000"
 
-* Im Verzeichnis wurden aktuell Beispieldaten abgelegt. Wenn Sie möchten, können Sie die Daten im „bestellungen.json“
-löschen. So bekommen Sie eine leere Webapplikation und Sie beginnen bei null. Ansonsten können Sie wie folgt eine Bestellung tätigen.
-
+* Im Verzeichnis wurden aktuell Beispieldaten abgelegt. Nun können Sie über das Bestellformular weitere Einträge generieren. 
 
 
 ### Funktionsbeschreibung
@@ -104,5 +102,5 @@ Gesamtumsatz auf.
 Bootstrap ist ein kostenloses und quelloffenes Frontend-Web-Framework zur Erstellung von Webseiten. Es dient der
 Visualisierung und schöneren Darstellung. Der Link wurde hierbei im Header eingefügt.
 
-### 5. FAQ's
+
 

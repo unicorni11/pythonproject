@@ -1,8 +1,13 @@
 {% include "header.html" %}
 
 <body>
-<h5>Übersicht einzelner Umsätze der Produkte:</h5>
-{{ balkendiagramm|safe }}
-<br>
+
+<p></p><h3>Umsätze insgesamt</h3></p>
+
+<div><p>Der Gesamtumsatz ist: {{ umsatz_gesamt }} CHF</p></div>
+<div><p>Der Umsatz der Ketten ist: {{ umsatz_ketten }} CHF</p></div>
+<div><p>Der Umsatz der Armbänder ist: {{ umsatz_armband }} CHF</p></div>
+<div><p>Der Umsatz der Ringe ist: {{ umsatz_ring }} CHF</p></div>
+<div><p>Der Umsatz der Ohrringe ist: {{ umsatz_ohrring }} CHF</p></div>
 </body>
 </html>

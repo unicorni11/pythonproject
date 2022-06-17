@@ -1,35 +1,35 @@
 [
-  {
-    "Name": "Marie-Amelie Frick",
-    "Adresse": "Im alten Riet 102",
-    "Was": "Armband",
-    "Welches": "Weissgold",
-    "Anzahl": "1",
-    "Gravur": "",
-    "Zeitstempel": "2022-06-09 18:05:59.426201",
-    "Bestellstatus": "nicht im Lager",
-    "Preis": 1500
-  },
-  {
-    "Name": "Anna-Lena Loibner",
-    "Adresse": "Riedstrasse 2",
-    "Was": "Ring",
-    "Welches": "Gelbgold",
-    "Anzahl": "1",
-    "Gravur": "Pro2 Bestanden",
-    "Zeitstempel": "2022-06-09 18:06:20.235642",
-    "Bestellstatus": "Versendet",
-    "Preis": 1000
-  },
-  {
-    "Name": "Nicolas ",
-    "Adresse": "Herrengasse 11",
-    "Was": "Armband",
-    "Welches": "Gelbgold",
-    "Anzahl": "1",
-    "Gravur": "F\u00fcr meine Liebe",
-    "Zeitstempel": "2022-06-09 18:07:04.916602",
-    "Bestellstatus": "im Lager",
-    "Preis": 1500
-  }
+    {
+        "Name": "Marie-Amelie Frick",
+        "Adresse": "Im alten Riet 102",
+        "Was": "Armband",
+        "Welches": "Weissgold",
+        "Anzahl": "1",
+        "Gravur": "",
+        "Zeitstempel": "2022-06-09 18:05:59.426201",
+        "Bestellstatus": "nicht im Lager",
+        "Preis": 1500
+    },
+    {
+        "Name": "Anna-Lena Loibner",
+        "Adresse": "Riedstrasse 2",
+        "Was": "Ring",
+        "Welches": "Gelbgold",
+        "Anzahl": "1",
+        "Gravur": "Pro2 Bestanden",
+        "Zeitstempel": "2022-06-09 18:06:20.235642",
+        "Bestellstatus": "Versendet",
+        "Preis": 1000
+    },
+    {
+        "Name": "Nicolas ",
+        "Adresse": "Herrengasse 11",
+        "Was": "Armband",
+        "Welches": "Gelbgold",
+        "Anzahl": "1",
+        "Gravur": "F\u00fcr meine Liebe",
+        "Zeitstempel": "2022-06-09 18:07:04.916602",
+        "Bestellstatus": "im Lager",
+        "Preis": 1500
+    }
 ]

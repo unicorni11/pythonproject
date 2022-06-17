@@ -91,28 +91,12 @@ def bestellungen():
 @app.route("/backend", methods=["GET", "POST"])
 def backend():
     bestell_uebersicht = []
-    umsatz_gesamt = 0  # beginnt beim Umsatz 0
-    umsatz_ketten = 0
-    umsatz_armband = 0
-    umsatz_ring = 0
-    umsatz_ohrring = 0
 
     try:
         with open("bestellung.json", "r") as open_file:  # r für read = lesen
             datei_inhalt = json.load(open_file)
     except FileNotFoundError:
         datei_inhalt = []
-    # Umsatzberechnung im Backend
-    for element in datei_inhalt:
-        umsatz_gesamt = umsatz_gesamt + element["Preis"]  # gesamtumsatz
-        if element["Was"] == "Kette":
-            umsatz_ketten = umsatz_ketten + element["Preis"]
-        elif element["Was"] == "Armband":
-            umsatz_armband = umsatz_armband + element["Preis"]
-        elif element["Was"] == "Ring":
-            umsatz_ring = umsatz_ring + element["Preis"]
-        else:
-            umsatz_ohrring = umsatz_ohrring + element["Preis"]
 
     # wie oben
     for element in datei_inhalt:
@@ -143,10 +127,39 @@ def backend():
 
         return redirect("backend")  # Rückgabe Backend Formular
 
-    return render_template("backend.html", bestell_uebersicht=bestell_uebersicht, umsatz_gesamt=umsatz_gesamt,
-                           umsatz_ketten=umsatz_ketten, umsatz_armband=umsatz_armband,
-                           umsatz_ring=umsatz_ring,
-                           umsatz_ohrring=umsatz_ohrring)  # Rückgabe der Bestellübersicht & jeweiligen Umsätze
+    return render_template("backend.html", bestell_uebersicht=bestell_uebersicht)  # Rückgabe der Bestellübersicht & jeweiligen Umsätze
+
+@app.route("/visualisierung")
+def datenvisualierung():
+        bestell_uebersicht = []
+        umsatz_gesamt = 0  # beginnt beim Umsatz 0
+        umsatz_ketten = 0
+        umsatz_armband = 0
+        umsatz_ring = 0
+        umsatz_ohrring = 0
+
+        try:
+            with open("bestellung.json", "r") as open_file:  # r für read = lesen
+                datei_inhalt = json.load(open_file)
+        except FileNotFoundError:
+            datei_inhalt = []
+
+        # Umsatzberechnung im Backend
+        for element in datei_inhalt:
+            umsatz_gesamt = umsatz_gesamt + element["Preis"]  # gesamtumsatz
+            if element["Was"] == "Kette":
+                umsatz_ketten = umsatz_ketten + element["Preis"]
+            elif element["Was"] == "Armband":
+                umsatz_armband = umsatz_armband + element["Preis"]
+            elif element["Was"] == "Ring":
+                umsatz_ring = umsatz_ring + element["Preis"]
+            else:
+                umsatz_ohrring = umsatz_ohrring + element["Preis"]
+
+        return render_template("visualisierung.html",bestell_uebersicht=bestell_uebersicht, umsatz_gesamt=umsatz_gesamt,
+                               umsatz_ketten=umsatz_ketten, umsatz_armband=umsatz_armband,
+                               umsatz_ring=umsatz_ring,
+                               umsatz_ohrring=umsatz_ohrring)  # Rückgabe der Bestellübersicht & jeweiligen Umsätze
 
 
 if __name__ == "__main__":
