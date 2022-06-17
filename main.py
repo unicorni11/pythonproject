@@ -18,10 +18,8 @@ def start():  # defintion der Funktion, welche Ausgeführt werden soll
 
 
 # Verlinkung auf Formularseite
-@app.route("/formular", methods=['GET',
-                                 'POST'])  # Verlinkung Formular, Get: Daten vom Server anfordern (Bestimmte Ressoruce wird zurückgesendet), Post: verarbeitete Daten weitergesendet (Mit Server sprechen)
-def formular():
-    daten_uebermittelt = False  # False(0): Dieser Ausdruck ist immer falsch
+@app.route("/formular", methods=["GET", "POST"])  # Get: Daten vom Server anfordern (Bestimmte Ressoruce wird zurückgesendet)
+def formular():  # Post: verarbeitete Daten weitergesendet (Mit Server sprechen)
     if request.method == 'POST':  # Zustand trifft ein oder nicht?
         data = request.form  # Daten in Liste
         name = data["name"]  # Liste, Eingabe Name
@@ -32,7 +30,7 @@ def formular():
         gravur = data["gravur"]
         zeitstempel = datetime.now()  # Datum & Uhrzeit werden generiert
 
-        daten_uebermittelt = True;  # True (1): Dieser Ausdruck ist immer wahr
+        daten_uebermittelt = True  # True (1): Dieser Ausdruck ist immer wahr
 
         if was == "Kette":  # Wenn Kette ausgewählt dann Rechne...
             preis = 3000 * int(anzahl)  # preisfunktion, int: Ganzzahlige Werte
@@ -127,39 +125,41 @@ def backend():
 
         return redirect("backend")  # Rückgabe Backend Formular
 
-    return render_template("backend.html", bestell_uebersicht=bestell_uebersicht)  # Rückgabe der Bestellübersicht & jeweiligen Umsätze
+    return render_template("backend.html",
+                           bestell_uebersicht=bestell_uebersicht)  # Rückgabe der Bestellübersicht & jeweiligen Umsätze
+
 
 @app.route("/visualisierung")
 def datenvisualierung():
-        bestell_uebersicht = []
-        umsatz_gesamt = 0  # beginnt beim Umsatz 0
-        umsatz_ketten = 0
-        umsatz_armband = 0
-        umsatz_ring = 0
-        umsatz_ohrring = 0
+    bestell_uebersicht = []
+    umsatz_gesamt = 0  # beginnt beim Umsatz 0
+    umsatz_ketten = 0
+    umsatz_armband = 0
+    umsatz_ring = 0
+    umsatz_ohrring = 0
 
-        try:
-            with open("bestellung.json", "r") as open_file:  # r für read = lesen
-                datei_inhalt = json.load(open_file)
-        except FileNotFoundError:
-            datei_inhalt = []
+    try:
+        with open("bestellung.json", "r") as open_file:  # r für read = lesen
+            datei_inhalt = json.load(open_file)
+    except FileNotFoundError:
+        datei_inhalt = []
 
-        # Umsatzberechnung im Backend
-        for element in datei_inhalt:
-            umsatz_gesamt = umsatz_gesamt + element["Preis"]  # gesamtumsatz
-            if element["Was"] == "Kette":
-                umsatz_ketten = umsatz_ketten + element["Preis"]
-            elif element["Was"] == "Armband":
-                umsatz_armband = umsatz_armband + element["Preis"]
-            elif element["Was"] == "Ring":
-                umsatz_ring = umsatz_ring + element["Preis"]
-            else:
-                umsatz_ohrring = umsatz_ohrring + element["Preis"]
+    # Umsatzberechnung im Backend
+    for element in datei_inhalt:
+        umsatz_gesamt = umsatz_gesamt + element["Preis"]  # gesamtumsatz
+        if element["Was"] == "Kette":
+            umsatz_ketten = umsatz_ketten + element["Preis"]
+        elif element["Was"] == "Armband":
+            umsatz_armband = umsatz_armband + element["Preis"]
+        elif element["Was"] == "Ring":
+            umsatz_ring = umsatz_ring + element["Preis"]
+        else:
+            umsatz_ohrring = umsatz_ohrring + element["Preis"]
 
-        return render_template("visualisierung.html",bestell_uebersicht=bestell_uebersicht, umsatz_gesamt=umsatz_gesamt,
-                               umsatz_ketten=umsatz_ketten, umsatz_armband=umsatz_armband,
-                               umsatz_ring=umsatz_ring,
-                               umsatz_ohrring=umsatz_ohrring)  # Rückgabe der Bestellübersicht & jeweiligen Umsätze
+    return render_template("visualisierung.html", bestell_uebersicht=bestell_uebersicht, umsatz_gesamt=umsatz_gesamt,
+                           umsatz_ketten=umsatz_ketten, umsatz_armband=umsatz_armband,
+                           umsatz_ring=umsatz_ring,
+                           umsatz_ohrring=umsatz_ohrring)  # Rückgabe der Bestellübersicht & jeweiligen Umsätze
 
 
 if __name__ == "__main__":

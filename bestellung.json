@@ -22,14 +22,25 @@
         "Preis": 1000
     },
     {
-        "Name": "Nicolas ",
-        "Adresse": "Herrengasse 11",
-        "Was": "Armband",
+        "Name": "Tarik Hoch",
+        "Adresse": "Burkat 11",
+        "Was": "Ohrring",
+        "Welches": "Rosegold",
+        "Anzahl": "1",
+        "Gravur": "",
+        "Zeitstempel": "2022-06-17 16:07:26.754338",
+        "Bestellstatus": "im Lager",
+        "Preis": 2500
+    },
+    {
+        "Name": "Fabienne Seitlinger",
+        "Adresse": "Im Malarsch 16",
+        "Was": "Kette",
         "Welches": "Gelbgold",
         "Anzahl": "1",
-        "Gravur": "F\u00fcr meine Liebe",
-        "Zeitstempel": "2022-06-09 18:07:04.916602",
-        "Bestellstatus": "im Lager",
-        "Preis": 1500
+        "Gravur": "12.04.1998",
+        "Zeitstempel": "2022-06-17 16:08:38.432665",
+        "Bestellstatus": "Versendet",
+        "Preis": 3000
     }
 ]
