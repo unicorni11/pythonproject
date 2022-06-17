@@ -16,11 +16,10 @@
    Zusätzlich bietet der Shop auch eine kostenlose Gravur an. Falls keine Gravur gewünscht wird, lässt der Kunde das
    Feld leer. Sind alle Daten erfasst, können diese in der Bestellübersicht veranschaulicht werden.
 
-   Der Shop Moderator hat nun die Möglichkeit, intern die Bestellliste im Backend einzusehen. Das Backend zeigt auf,
-   welcher Umsatz mit welchem Produkt generiert wurde. Da das bestellte Produkt an die angegebene Adresse versendet wird,
+   Der Shop Moderator hat nun die Möglichkeit, intern die Bestellliste im Backend einzusehen. Da das bestellte Produkt an die angegebene Adresse versendet wird,
    muss zuerst geklärt werden, ob sich dieses Produkt an Lager befindet. Somit kann der Shop Moderator in der Bestellübersicht
    folgende Funktionen auswählen: nicht an Lager, an Lager und versendet. Diese Daten werden gespeichert und in der
-   Bestellübersicht unter Status aufgezeigt.
+   Bestellübersicht unter Status aufgezeigt.Zudem kann der Shop Moderator die jeweils genierten Umsätze in der Datenvisualiserung berücksichtigen. 
 
 ### 3. Ablaufdiagramm 
 
