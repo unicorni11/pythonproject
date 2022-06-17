@@ -19,7 +19,7 @@
    Der Shop Moderator hat nun die Möglichkeit, intern die Bestellliste im Backend einzusehen. Da das bestellte Produkt an die angegebene Adresse versendet wird,
    muss zuerst geklärt werden, ob sich dieses Produkt an Lager befindet. Somit kann der Shop Moderator in der Bestellübersicht
    folgende Funktionen auswählen: nicht an Lager, an Lager und versendet. Diese Daten werden gespeichert und in der
-   Bestellübersicht unter Status aufgezeigt.Zudem kann der Shop Moderator die jeweils genierten Umsätze in der Datenvisualiserung berücksichtigen. 
+   Bestellübersicht unter Status aufgezeigt. Zudem kann der Shop Moderator die jeweils genierten Umsätze in der Datenvisualiserung berücksichtigen. 
 
 ### 3. Ablaufdiagramm 
 
@@ -93,8 +93,9 @@ an Lager, an Lager und versendet ausgewählt werden.
 * Danach wird im Bereich „Status“ die aktuelle Situation der
 Bestellung aufgelistet.
 
-* Zudem zeigt das Backend eine Auflistung der einzelnen Umsätze der Produkte sowie den
-Gesamtumsatz auf.
+#### Visualisierung (visualisierung.html)
+* Die Datenvisualisierung veranschaulicht eine Auflistung der einzelnen Umsätze der Produkte sowie den
+Gesamtumsatz.
 
 #### Bootstrap
 
