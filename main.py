@@ -1,10 +1,10 @@
 from flask import Flask
-from flask import render_template  # Jinja Html Codes, Datensatz in Grafiken umwandeln
-from flask import request, redirect  # Benutzer auf URL umleiten
-import json  # JavaScript Object Notation (JSON), Datenspeicherung durch das Formular
-from datetime import datetime  # zeitstempel, Kalender
-import plotly.express as px  # Datenvisuallierung
-from plotly.offline import plot  # als div, rendern
+from flask import render_template
+from flask import request, redirect
+import json
+from datetime import datetime
+import plotly.express as px
+from plotly.offline import plot
 
 # Name App
 app = Flask("__name__")
@@ -12,8 +12,8 @@ app = Flask("__name__")
 
 # Verlinkung auf Hauptseite, Python Funktion in Flask umwandeln
 @app.route("/")  # URL einen Pfad zuweisen (dynamisch)
-def start():  # defintion der Funktion, welche Ausgeführt werden soll
-    name = "Anna-Lena"  # name der Ausgeben wird
+def start():  # definition der Funktion, welche Ausgeführt werden soll
+    name = "Anna-Lena"  # name der Ausgegeben wird
     return render_template("index.html", name=name)  # Rückgabe der Funktion, durch Grafik
 
 
@@ -156,7 +156,15 @@ def datenvisualierung():
         else:
             umsatz_ohrring = umsatz_ohrring + element["Preis"]
 
-    return render_template("visualisierung.html", bestell_uebersicht=bestell_uebersicht, umsatz_gesamt=umsatz_gesamt,
+    balkendiagramm = px.bar(  # Balkendiagramm mit plotly
+        x=["Kette", "Armband", "Ring", "Ohrring"],  # Daten für x-Achse des Diagramms
+        y=[umsatz_ketten, umsatz_armband, umsatz_ring, umsatz_ohrring],  # Daten für y-Achse des Diagramms
+        labels={"x": "Produktbeschreibung", "y": "Umsätze in CHF"}  # Achsenbeschriftung
+    )
+    div_balkendiagramm = plot(balkendiagramm, output_type="div")  # Balkendiagramm für Vergleich Höhenmeter
+
+
+    return render_template("visualisierung.html", balkendiagramm=div_balkendiagramm, bestell_uebersicht=bestell_uebersicht, umsatz_gesamt=umsatz_gesamt,
                            umsatz_ketten=umsatz_ketten, umsatz_armband=umsatz_armband,
                            umsatz_ring=umsatz_ring,
                            umsatz_ohrring=umsatz_ohrring)  # Rückgabe der Bestellübersicht & jeweiligen Umsätze

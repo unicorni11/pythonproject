@@ -96,6 +96,7 @@ Bestellung aufgelistet.
 #### Visualisierung (visualisierung.html)
 * Die Datenvisualisierung veranschaulicht eine Auflistung der einzelnen Umsätze der Produkte sowie den
 Gesamtumsatz.
+* Zudem wurde ein Balkendiagramm mittels Plotly erstellt, um somit eine vereinfachte Darstellung der Umsätze aufzuzeigen. 
 
 #### Bootstrap
 

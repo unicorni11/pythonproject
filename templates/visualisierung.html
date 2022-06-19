@@ -9,5 +9,9 @@
 <div><p>Der Umsatz der Armbänder ist: {{ umsatz_armband }} CHF</p></div>
 <div><p>Der Umsatz der Ringe ist: {{ umsatz_ring }} CHF</p></div>
 <div><p>Der Umsatz der Ohrringe ist: {{ umsatz_ohrring }} CHF</p></div>
+<br>
+      <p><h3>Übersicht der Umsätze</h3></p>
+        {{ balkendiagramm|safe }} <!-- safe = unveränderte Datenübergabe mit Jinja Code -->
+        </br>
 </body>
 </html>
