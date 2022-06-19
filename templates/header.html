@@ -1,21 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html> <!-- Dokumententyp -->
+<html lang="en">  <!-- Stammdaten -->
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"> <!-- HTML Vision -->
     <link rel="stylesheet" href="{{url_for('static', filename='bootstrap/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" type="text/css" href="main.css" media="screen"/>
-    <title>Title</title>
+    <!-- Verlinkung Bootstrap Ordner-->
+    <title>Title</title> <!-- Titel -->
 </head>
-<body>
+<body> <!-- Inhalt --> <!-- Farbe Hintergrund & Bootstrap Farbe -->
 <header style="background-color:rgb(238, 180, 180)" class="p-3 text-white">
-    <div class="container">
+    <div class="container">  <!-- Bootstrap -->
         <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
             <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
                 <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap">
                     <use xlink:href="#bootstrap"></use>
                 </svg>
             </a>
-
+            <!-- Header Verlinkung + Namen, ul = Liste ohne Ordnung -->
             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
                 <li><a href="/" class="nav-link px-2 text-secondary">Home</a></li>
                 <li><a href="/formular" class="nav-link px-2 text-white">Bestellformular</a></li>
@@ -23,9 +23,7 @@
                 <li><a href="/backend" class="nav-link px-2 text-white">Backend</a></li>
                 <li><a href="/visualisierung" class="nav-link px-2 text-white">Daten Visualisierung</a></li>
             </ul>
-
         </div>
-    </div>
     </div>
 </header>
 

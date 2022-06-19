@@ -1,18 +1,20 @@
 {% include "header.html" %}
+<!-- Wiederholende Codes können mittels Jinja eingebaut werden -->
+<!-- Header -->
 
-<form method="POST" class=" m-3 w-25">
-
+<form method="POST" class=" m-3 w-25"> <!-- Post: verarbeitete Daten weitergesendet (Mit Server sprechen) --!>
+    <!-- Eingabefeld -->
     <p>Bitte gebe deinen Namen ein: </p><input class="col-md-12 mt-1" type="text" name="name" placeholder="Name"></p>
-
+    <!-- Eingabefeld -->
     <p>Bitte gebe deine Adresse ein: </p><input class="col-md-12 mt-1" type="text" name="adresse"
                                                 placeholder="Adresse"></p>
 
-
+    <!-- Dropdown Menü -->
     <p>
     <div class="form-group">
-        <label for="was">Was möchten Sie Einkaufen?</label>
-        <select class="form-control" name="was" id="was">
-            <option>Kette</option>
+        <label for="was">Was möchten Sie Einkaufen?</label> <!-- Select erzeugt Dropdown -->
+        <select class="form-control" name="was" id="was"> <!-- was: name element im main -->
+            <option>Kette</option> <!-- Dropdown Menü -->
             <option>Armband</option>
             <option>Ring</option>
             <option>Ohrring</option>
@@ -22,8 +24,8 @@
     <p>
     <div class="form-group">
         <label for="welches">Welches Material soll das ausgewählte Produkt haben?</label>
-        <select class="form-control" name="welches" id="welches">
-            <option>Weissgold</option>
+        <select class="form-control" name="welches" id="welches">  <!-- Select erzeugt Dropdown -->
+            <option>Weissgold</option> <!-- Dropdown Menü -->
             <option>Gelbgold</option>
             <option>Rosegold</option>
 
@@ -35,7 +37,7 @@
     <div class="form-group">
         <label for="anzahl">Anzahl</label>
         <select class="form-control" name="anzahl" id="anzahl">
-            <option>1</option>
+            <option>1</option> <!-- Dropdown Menü -->
             <option>2</option>
             <option>3</option>
             <option>4</option>
@@ -50,13 +52,14 @@
     <div class="form-group">
         </p>
 
+        <!-- Eingabefeld -->
         <p>Möchten Sie eine Gravur? </p><input class="col-md-12 mt-1" type="text" name="gravur"
                                                placeholder="Gravur"><br><br>
-
+        <!-- Button-->
         <button type="submit">Daten übermitteln</button>
-        {% if daten_uebermittelt == True %}
-        <p class="text-success">Deine Daten wurden erfolgreich übermittelt!</p>
-        {% endif %}
+        {% if daten_uebermittelt == True %} <!-- Daten werden an Bestellformular übermittelt-->
+        <p class="text-success">Deine Daten wurden erfolgreich übermittelt!</p>   <!-- Text nachdem Daten übermittelt-->
+        {% endif %} <!-- Liste auflisten in Html, render wird im Template mitgeben-->
 </form>
 </body>
 </html>

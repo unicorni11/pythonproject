@@ -1,56 +1,64 @@
 {% include "header.html" %}
+<!-- Wiederholende Codes können mittels Jinja eingebaut werden -->
+<!-- Header -->
+
+<!-- Bestellübersicht im Backend -->
 <body>
-    <form method="POST">
-        <table class="table table-striped m-4">
-            <thead style="background-color:rgb(238, 180, 180)">
-            <th style="width: 10%" scope="col">Name</th>
-            <th style="width: 10%" scope="col">Adresse</th>
-            <th style="width: 10%" scope="col">Produkt</th>
-            <th style="width: 10%" scope="col">Material</th>
-            <th style="width: 10%" scope="col">Anzahl</th>
-            <th style="width: 10%" scope="col">Gravur</th>
-            <th style="width: 10%" scope="col">Status</th>
-            <th style="width: 10%" scope="col">Auswahl</th>
-            </thead>
-            <tbody>
-            {% for element in bestell_uebersicht %}
+<form method="POST">
+    <table class="table table-striped m-4">
+        <thead style="background-color:rgb(238, 180, 180)"> <!-- Farbe Hintergrund -->
+        <th style="width: 10%" scope="col">Name</th> <!-- Überschriften Bestellliste-->
+        <th style="width: 10%" scope="col">Adresse</th>
+        <th style="width: 10%" scope="col">Produkt</th>
+        <th style="width: 10%" scope="col">Material</th>
+        <th style="width: 10%" scope="col">Anzahl</th>
+        <th style="width: 10%" scope="col">Gravur</th>
+        <th style="width: 10%" scope="col">Status</th>
+        <th style="width: 10%" scope="col">Auswahl</th>
+        </thead>
+        <tbody>
+        {% for element in bestell_uebersicht %}
+        <!-- Wiederholende Codes können mittels Jinja eingebaut werden -->
+        <!-- 8 Elemente die in der Bestellübersicht sichtbar sind -->
+        <tr>
+            <td>{{element[0]}}</td>
+            <td>{{element[1]}}</td>
+            <td>{{element[2]}}</td>
+            <td>{{element[3]}}</td>
+            <td>{{element[4]}}</td>
+            <td>{{element[5]}}</td>
+            <td>{{element[7]}}</td>
+            <td>
+                <!-- Bootstrap Checkbox -->
+                <form method="POST" action="{{ url_for('backend') }}">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="{{ element[6] }}" id="flexRadioDefault4"
+                               value="nicht im Lager">
+                        <label class="form-check-label" for="flexRadioDefault4">nicht im Lager</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="{{ element[6] }}" id="flexRadioDefault5"
+                               value="im Lager">
+                        <label class="form-check-label" for="flexRadioDefault5">Im Lager</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="{{ element[6] }}" id="flexRadioDefault6"
+                               value="Versendet">
+                        <label class="form-check-label" for="flexRadioDefault6">Versendet</label>
+                    </div>
+                    <!-- Button Senden-->
+                    <button type="submit">Senden</button>
+                </form>
+            </td>
 
-            <tr>
-                <td>{{element[0]}}</td>
-                <td>{{element[1]}}</td>
-                <td>{{element[2]}}</td>
-                <td>{{element[3]}}</td>
-                <td>{{element[4]}}</td>
-                <td>{{element[5]}}</td>
-                <td>{{element[7]}}</td>
-                <td>
-                    <form method="POST" action="{{ url_for('backend') }}">
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="{{ element[6] }}" id="flexRadioDefault4"
-                                   value="nicht im Lager">
-                            <label class="form-check-label" for="flexRadioDefault4">nicht im Lager</label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="{{ element[6] }}" id="flexRadioDefault5"
-                                   value="im Lager">
-                            <label class="form-check-label" for="flexRadioDefault5">Im Lager</label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="{{ element[6] }}" id="flexRadioDefault6"
-                                   value="Versendet">
-                            <label class="form-check-label" for="flexRadioDefault6">Versendet</label>
-                        </div>
-                        <button type="submit">Senden</button>
-                    </form>
-                </td>
 
+        </tr>
 
-            </tr>
-
-            {% endfor %}
-            </tbody>
-        </table>
-    </form>
+        {% endfor %}
+        <!-- Liste auflisten in Html, render wird im Template mitgeben-->
+        </tbody>
+    </table>
+</form>
 </div>
 </body>
 </html>

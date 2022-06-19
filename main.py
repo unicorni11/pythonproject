@@ -14,13 +14,14 @@ app = Flask("__name__")
 @app.route("/")  # URL einen Pfad zuweisen (dynamisch)
 def start():  # definition der Funktion, welche Ausgeführt werden soll
     name = "Anna-Lena"  # name der Ausgegeben wird
-    return render_template("index.html", name=name)  # Rückgabe der Funktion, durch Grafik
+    return render_template("index.html", name=name)  # Rückgabe der Funktion
 
 
 # Verlinkung auf Formularseite
-@app.route("/formular", methods=["GET", "POST"])  # Get: Daten vom Server anfordern (Bestimmte Ressoruce wird zurückgesendet)
-def formular():  # Post: verarbeitete Daten weitergesendet (Mit Server sprechen)
-    if request.method == 'POST':  # Zustand trifft ein oder nicht?
+@app.route("/formular",
+           methods=["GET", "POST"])  # Get: Daten vom Server anfordern (Bestimmte Ressoruce wird zurückgesendet)
+def formular():
+    if request.method == 'POST':  # Zustand trifft ein oder nicht? Post: verarbeitete Daten weitergesendet (Mit Server sprechen)
         data = request.form  # Daten in Liste
         name = data["name"]  # Liste, Eingabe Name
         adresse = data["adresse"]
@@ -42,7 +43,7 @@ def formular():  # Post: verarbeitete Daten weitergesendet (Mit Server sprechen)
             preis = 2500 * int(anzahl)
 
         try:  # Ausnahmen behandeln, auf einen error den code testen
-            with open("bestellung.json", "r") as open_file:  # r für read = lesen
+            with open("bestellung.json", "r") as open_file:  # r für read = lesen, aus Open-Source-Projekten extrahiert
                 datei_inhalt = json.load(open_file)  # liste in die json datei laden
         except FileNotFoundError:  # falls error, als leere Liste anzeigen
             datei_inhalt = []  # leere Liste
@@ -54,21 +55,23 @@ def formular():  # Post: verarbeitete Daten weitergesendet (Mit Server sprechen)
             my_dict)  # Jedes Schlüssel-Wert-Paar in eine Liste hinzufügen, append: ende der Liste hinzufügen
 
         with open("bestellung.json", "w") as open_file:  # w= write
-            json.dump(datei_inhalt, open_file, indent=4,
-                      default=str)  # dumpp=konvertiert ein Python-Objekt in einen JSON-String. indent=4 das es schöne aussieht, default=standardwert str= Zahlen als Text
+            json.dump(datei_inhalt, open_file, indent=4,  # indent=4 das es schöne aussieht
+                      default=str)  # dumpp=konvertiert ein Python-Objekt in einen JSON-String, default=standardwert zuweisen -> str= Zahlen als Text
         return render_template("formular.html",
-                               daten_uebermittelt=daten_uebermittelt)  # Rückgabe der Funktion, durch Grafik
+                               daten_uebermittelt=daten_uebermittelt)  # Rückgabe der Funktion
     else:
         return render_template(
             "formular.html")  # Wenn Url nicht mit Post methode aufgerufen, dann über bestellungen.html gerendert werden
+        # rendern: „Übertragung“, programmierte Datensätze werden in Bilder umgewandelt bspw. Grafiken
 
 
+# Verlinkung auf Bestellübersicht
 @app.route("/bestellungen")
 def bestellungen():
-    bestell_uebersicht = []
+    bestell_uebersicht = []  # leere Liste
 
     try:
-        with open("bestellung.json", "r") as open_file:
+        with open("bestellung.json", "r") as open_file:  # r für read = lesen
             datei_inhalt = json.load(open_file)
     except FileNotFoundError:
         datei_inhalt = []
@@ -86,6 +89,7 @@ def bestellungen():
     return render_template("bestellungen.html", bestell_uebersicht=bestell_uebersicht)  # Rückgabe der Funktion
 
 
+# Verlinkung auf Backend Bestellübersicht
 @app.route("/backend", methods=["GET", "POST"])
 def backend():
     bestell_uebersicht = []
@@ -121,14 +125,15 @@ def backend():
 
         with open("bestellung.json", "w") as open_file:
             json.dump(datei_inhalt, open_file, indent=4,
-                      default=str)  # dumpp=konvertiert ein Python-Objekt in einen JSON-String. indent=4 das es schöne aussieht, default=standardwert str= Zahlen als Text
+                      default=str)
 
         return redirect("backend")  # Rückgabe Backend Formular
 
     return render_template("backend.html",
-                           bestell_uebersicht=bestell_uebersicht)  # Rückgabe der Bestellübersicht & jeweiligen Umsätze
+                           bestell_uebersicht=bestell_uebersicht)  # Rückgabe der Bestellübersicht
 
 
+# Verlinkung auf Datenvisualisierung
 @app.route("/visualisierung")
 def datenvisualierung():
     bestell_uebersicht = []
@@ -145,31 +150,32 @@ def datenvisualierung():
         datei_inhalt = []
 
     # Umsatzberechnung im Backend
-    for element in datei_inhalt:
-        umsatz_gesamt = umsatz_gesamt + element["Preis"]  # gesamtumsatz
-        if element["Was"] == "Kette":
+    for element in datei_inhalt:  # Elemente aus der Bestellüberischt werden übernommen
+        umsatz_gesamt = umsatz_gesamt + element["Preis"]  # Gesamtumsatz
+        if element["Was"] == "Kette":  # Umsatz Kette
             umsatz_ketten = umsatz_ketten + element["Preis"]
-        elif element["Was"] == "Armband":
+        elif element["Was"] == "Armband":  # Umsatz Armband
             umsatz_armband = umsatz_armband + element["Preis"]
-        elif element["Was"] == "Ring":
+        elif element["Was"] == "Ring":  # Umsatz Ring
             umsatz_ring = umsatz_ring + element["Preis"]
         else:
-            umsatz_ohrring = umsatz_ohrring + element["Preis"]
+            umsatz_ohrring = umsatz_ohrring + element["Preis"]  # Umsatz Ohrring
 
     balkendiagramm = px.bar(  # Balkendiagramm mit plotly
         x=["Kette", "Armband", "Ring", "Ohrring"],  # Daten für x-Achse des Diagramms
         y=[umsatz_ketten, umsatz_armband, umsatz_ring, umsatz_ohrring],  # Daten für y-Achse des Diagramms
         labels={"x": "Produktbeschreibung", "y": "Umsätze in CHF"}  # Achsenbeschriftung
     )
-    div_balkendiagramm = plot(balkendiagramm, output_type="div")  # Balkendiagramm für Vergleich Höhenmeter
+    div_balkendiagramm = plot(balkendiagramm, output_type="div")  # Balkendiagramm als Vergleich
 
-
-    return render_template("visualisierung.html", balkendiagramm=div_balkendiagramm, bestell_uebersicht=bestell_uebersicht, umsatz_gesamt=umsatz_gesamt,
+    return render_template("visualisierung.html", balkendiagramm=div_balkendiagramm,
+                           bestell_uebersicht=bestell_uebersicht, umsatz_gesamt=umsatz_gesamt,
                            umsatz_ketten=umsatz_ketten, umsatz_armband=umsatz_armband,
                            umsatz_ring=umsatz_ring,
-                           umsatz_ohrring=umsatz_ohrring)  # Rückgabe der Bestellübersicht & jeweiligen Umsätze
+                           umsatz_ohrring=umsatz_ohrring)  # Rückgabe der berechneten Umsätze & dem Plotly Diagramm
 
 
+# funktion prüft, ob das Skript direkt ausgeführt wurde, oder von einem anderen importiert
 if __name__ == "__main__":
     app.run(debug=True, port=5000)
     # Flask App soll mit folgenden Parametern starten

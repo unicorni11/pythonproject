@@ -1,9 +1,13 @@
 {% include "header.html" %}
+<!-- Wiederholende Codes können mittels Jinja eingebaut werden -->
+<!-- Header -->
+
+<!-- Bestellübersicht Spaltenanzeige-->
 <body>
 <div>
     <table class="table table-striped m-4">
-        <thead style="background-color:rgb(255, 211, 155)">
-        <th style="width: 10%" scope="col">Name</th>
+        <thead style="background-color:rgb(255, 211, 155)"> <!-- Farbe Hintergrund -->
+        <th style="width: 10%" scope="col">Name</th> <!-- Überschriften Bestellliste-->
         <th style="width: 10%" scope="col">Adresse</th>
         <th style="width: 10%" scope="col">Produkt</th>
         <th style="width: 10%" scope="col">Material</th>
@@ -11,9 +15,12 @@
         <th style="width: 10%" scope="col">Gravur</th>
         </thead>
         <tbody>
+
+        <!-- Wiederholende Codes können mittels Jinja eingebaut werden -->
+        <!-- 6 Elemente die in der Bestellübersicht sichtbar sind -->
         {% for element in bestell_uebersicht %}
         <tr>
-            <td>{{element[0]}}</td>
+            <td>{{element[0]}}</td> <!-- Liste mit gespeicherten Elementen -->
             <td>{{element[1]}}</td>
             <td>{{element[2]}}</td>
             <td>{{element[3]}}</td>
@@ -22,6 +29,7 @@
 
         </tr>
         {% endfor %}
+        <!-- Liste auflisten in Html, render wird im Template mitgeben-->
         </tbody>
     </table>
 </div>
